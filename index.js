@@ -3,6 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const controller = require('./controller')
 
+const PORT = process.env.PORT || 3000
+
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -20,4 +22,4 @@ app.post('/lineWebhook', async function (req, res) {
   res.sendStatus(204)
 })
 
-app.listen(3000)
+app.listen(PORT)
