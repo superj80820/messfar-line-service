@@ -40,7 +40,7 @@ async function imageController (req, res) {
     if (utils.whetherExcuteImageController(req)) return
     const imageName = `${new Date().getTime().toString()}-${uuid()}`
     const savePath = './temp'
-    const [getImageResult, getImageError] = await lineService.getImage(req.body.events[0].message.Id)
+    const [getImageResult, getImageError] = await lineService.getImage(req.body.events[0].message.id)
     if (getImageError) {
       // TODO: 回傳辨識失敗的訊息
     }

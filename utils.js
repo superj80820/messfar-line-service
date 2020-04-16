@@ -1,4 +1,4 @@
-const model = require('./model')
+const rp = require('request-promise')
 
 function arrayApplyToTemplage (array, applyTemplateFunction) {
   return array
@@ -11,7 +11,18 @@ function whetherExcuteImageController (req) {
   ) ? true : false
 }
 
+function request (options) {
+  return rp(options)
+  .then(result => {
+    return [result, null]
+  })
+  .catch(error => {
+    return [null, error]
+  })
+}
+
 module.exports = {
   arrayApplyToTemplage,
-  whetherExcuteImageController
+  whetherExcuteImageController,
+  request
 }

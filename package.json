@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon --inspect=9230 index.js",
     "test": "jest",
     "autoUnitTest": "npm run test -- --watch"
   },
@@ -28,6 +29,7 @@
     "uuidv4": "^6.0.6"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.3"
   }
 }
