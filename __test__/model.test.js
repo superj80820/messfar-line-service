@@ -97,7 +97,7 @@ describe('測試recognition模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
@@ -239,7 +239,7 @@ describe('測試recognition模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
@@ -366,7 +366,7 @@ describe('測試recognition模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=上原亞衣"
                 }
               }
             ],
@@ -545,7 +545,7 @@ describe('測試wish模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
@@ -664,7 +664,7 @@ describe('測試wish模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
@@ -770,7 +770,7 @@ describe('測試wish模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=上原亞衣"
                 }
               }
             ],

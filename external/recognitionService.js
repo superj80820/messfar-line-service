@@ -1,5 +1,6 @@
 const utils = require('../utils');
 const fs = require('fs');
+const lodash = require('lodash');
 
 const RECOGNITION_URL = process.env.RECOGNITION_URL
 
@@ -14,14 +15,21 @@ async function searchFace(imagePath) {
   if (error) {
     // TODO: error handling
   }
-  return [[
-    {
-      imageUrl: results[0].preview,
-      name: results[0].name,
-      recognitionPercentage: `${parseInt(results[0].recognitionPercentage)}%`,
-      description: results[0].detail || "天使來了～"
-    }
-  ], null]
+  return [
+    results
+      .reduce((previous, current) => {
+        if (lodash.get(previous, `[${previous.length - 1}].name`) !== current.name) {
+          previous.push(current)
+        }
+        return previous
+      }, [])
+      .map(result => ({
+        imageUrl: result.preview,
+        name: result.name,
+        recognitionPercentage: `${parseInt(result.recognitionPercentage)}%`,
+        description: result.detail})),
+    null
+  ]
 }
 
 async function randomFace() {
@@ -38,7 +46,7 @@ async function randomFace() {
   return [results.map(result => ({
     imageUrl: result.preview,
     name: result.name,
-    description: result.detail || "天使來了～"
+    description: result.detail
   })), null]
 }
 

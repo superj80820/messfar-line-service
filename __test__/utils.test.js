@@ -112,7 +112,7 @@ test('將array的女優資料正確套用至模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=上原亞衣"
                 }
               }
             ],
@@ -239,7 +239,7 @@ test('將array的女優資料正確套用至模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
@@ -366,7 +366,7 @@ test('將array的女優資料正確套用至模板', () => {
                 "action": {
                   "type": "uri",
                   "label": "action",
-                  "uri": "http://linecorp.com/"
+                  "uri": "https://www.google.com/search?q=橋本有菜"
                 }
               }
             ],
