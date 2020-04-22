@@ -1,0 +1,11 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      if: branch = master
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t messfar-line-service .
+      - docker tag messfar-line-service $DOCKER_USERNAME/messfar-line-service
+      - docker push $DOCKER_USERNAME/messfar-line-service
