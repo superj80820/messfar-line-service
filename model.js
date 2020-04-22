@@ -23,7 +23,7 @@ function applyRecognitionTemplate(options) {
   }))
   const recognitionTemplate = JSON.parse(recognitionTemplateFile)
   recognitionTemplate.body.contents[0].url = options.imageUrl
-  recognitionTemplate.body.contents[1].contents[2].action.uri = `https://www.google.com/search?q=${options.name}`
+  recognitionTemplate.body.contents[1].contents[2].action.uri = `https://www.google.com/search?q=${encodeURIComponent(options.name)}`
   recognitionTemplate.body.contents[1].contents[0].contents[0].text = options.name
   recognitionTemplate.body.contents[1].contents[1].contents[0].text = options.description || "有可能是他呢～"
   recognitionTemplate.body.contents[2].contents[0].text = options.recognitionPercentage
