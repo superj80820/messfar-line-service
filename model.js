@@ -38,7 +38,7 @@ function applyWishTemplate(options) {
   }))
   const wishTemplate = JSON.parse(wishTemplateFile)
   wishTemplate.body.contents[0].url = options.imageUrl
-  wishTemplate.body.contents[1].contents[2].action.uri = `https://www.google.com/search?q=${options.name}`
+  wishTemplate.body.contents[1].contents[2].action.uri = `https://www.google.com/search?q=${encodeURIComponent(options.name)}`
   wishTemplate.body.contents[1].contents[0].contents[0].text = options.name
   wishTemplate.body.contents[1].contents[1].contents[0].text = options.description || "天使來了～"
   return wishTemplate
