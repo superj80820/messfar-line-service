@@ -14,13 +14,12 @@ function request (options) {
   })
 }
 
-function applyRecognitionTemplate(options) {
-  ow(options, ow.object.exactShape({
-    imageUrl: ow.string,
-    name: ow.string,
-    recognitionPercentage: ow.string,
-    description: ow.string
-  }))
+function applyRecognitionTemplate(options = {
+  imageUrl: '',
+  name: '',
+  recognitionPercentage: '',
+  description: ''
+}) {
   const recognitionTemplate = JSON.parse(recognitionTemplateFile)
   recognitionTemplate.body.contents[0].url = options.imageUrl
   recognitionTemplate.body.contents[1].contents[2].action.uri = `https://www.google.com/search?q=${encodeURIComponent(options.name)}`
