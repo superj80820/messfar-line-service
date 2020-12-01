@@ -3,6 +3,7 @@ const lineService = require('./external/lineService')
 const { uuid } = require('uuidv4')
 const utils = require('./utils')
 const fs = require('fs')
+const { promisify } = require('util')
 const recognitionService = require('./external/recognitionService')
 const redis = require('./storage/redis')
 
@@ -138,6 +139,7 @@ async function sendSearchFaceImage(req) {
     // Error handling
     console.error(error)
   }
+  await promisify(fs.unlink)(`${savePath}/${imageName}`)
 }
 
 module.exports = {
