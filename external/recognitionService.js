@@ -24,6 +24,7 @@ async function searchFace(imagePath) {
         return previous
       }, [])
       .map(result => ({
+        ID: result.id,
         imageUrl: result.preview,
         name: result.name,
         recognitionPercentage: `${parseInt(result.recognitionPercentage)}%`,
@@ -44,6 +45,7 @@ async function randomFace() {
   }
 
   return [results.map(result => ({
+    ID: result.id,
     imageUrl: result.preview,
     name: result.name,
     description: result.detail
